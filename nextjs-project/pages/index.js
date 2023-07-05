@@ -41,7 +41,7 @@ export default function Home() {
         </div>
 
         <div className={styles.blogs}>
-          <h2>Popular Blogs</h2>
+          <h2>Latest Blogs</h2>
           <div className={styles.blogItem}>
             <h3>How to Learn Javascript?</h3>
             <p>

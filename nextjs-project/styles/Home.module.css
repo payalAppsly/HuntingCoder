@@ -239,8 +239,14 @@
 }
 .listContainer {
   display: flex;
-  gap: 10px;
+  gap: 15px;
 }
 .listItem {
   list-style: none;
+}
+
+.nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: 800;
 }

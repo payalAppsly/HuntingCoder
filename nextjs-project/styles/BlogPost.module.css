@@ -1,0 +1,25 @@
+.container {
+  padding: 0 20rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.main a {
+  text-decoration: none;
+  color: black;
+}
+
+.back {
+  margin: 10px 0px;
+  padding: 0.5rem 2rem;
+  border-radius: var(--border-radius);
+  background: rgba(var(--card-rgb), 0);
+  border: 1px solid rgba(var(--card-border-rgb));
+  transition: background 200ms, border 200ms;
+}
