@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -15,32 +16,28 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <nav className={styles.nav}>
-          <ul className={styles.listContainer}>
-            <li className={styles.listItem}>Home</li>
-            <li className={styles.listItem}>About</li>
-            <li className={styles.listItem}>Contact</li>
-          </ul>
-        </nav>
+        <style jsx>
+          {`
+            h2,
+            h3 {
+              line-height: 2;
+            }
+          `}
+        </style>
+       
         <div className={styles.description}>
-          <p>Hunting Coder</p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{" "}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
+          <h1>Hunting Coder</h1>
+          <div className={styles.center}>
+            <Image
+              className={styles.logo}
+              src="/homeImage.jpg"
+              alt="Next.js Logo"
+              width={518}
+              height={345}
+              priority
+            />
           </div>
+          <h5>A blog for blogger A blog for blogger</h5>
         </div>
 
         <div className={styles.blogs}>
@@ -69,17 +66,6 @@ export default function Home() {
               Javascript is the language used to design logic for the web page
             </p>
           </div>
-        </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
         </div>
       </main>
     </>
