@@ -1,23 +1,16 @@
-import React from "react";
-import { useRouter } from "next/router";
+import React, { useState, useEffect } from "react";
 import styles from "../../styles/BlogPost.module.css";
 import Link from "next/link";
 
-const slug = () => {
-  const router = useRouter();
-  const { slug } = router.query;
+const slug = (props) => {
+  const [blogs, setBlogs] = useState(props.myBlogs);
+
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1> this is {slug} page</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid quas
-          officiis sint maxime repellat eius doloribus accusamus sit ipsum
-          commodi voluptate nulla explicabo enim cumque nobis accusantium
-          maiores sequi, consequuntur ipsam. Eveniet eos recusandae placeat.
-          Provident quaerat nobis sequi optio exercitationem, debitis molestiae
-          hic, porro laborum adipisci, recusandae nam minima.
-        </p>
+        <h1> {blogs && blogs.title} </h1>
+        <hr />
+        <div>{blogs && blogs.content}</div>
         <Link href={"/blog"} className={styles.back}>
           Back
         </Link>
@@ -25,5 +18,13 @@ const slug = () => {
     </div>
   );
 };
+
+export async function getServerSideProps(context) {
+  const { slug } = context.query;
+  const data = await fetch(`http://localhost:3000/api/getblog?slug=${slug}`);
+  const myBlogs = await data.json();
+
+  return { props: { myBlogs } };
+}
 
 export default slug;
