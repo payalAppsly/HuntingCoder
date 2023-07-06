@@ -1,8 +1,6 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,17 +22,16 @@ export default function Home() {
             }
           `}
         </style>
-       
+
         <div className={styles.description}>
           <h1>Hunting Coder</h1>
           <div className={styles.center}>
-            <Image
+            <img
               className={styles.logo}
               src="/homeImage.jpg"
               alt="Next.js Logo"
               width={518}
               height={345}
-              priority
             />
           </div>
           <h5>A blog for blogger A blog for blogger</h5>
